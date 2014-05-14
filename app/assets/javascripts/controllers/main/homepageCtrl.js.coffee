@@ -1,0 +1,2 @@
+@HomepageCtrl = ($scope) ->
+	
