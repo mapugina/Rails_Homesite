@@ -4,10 +4,12 @@
     <p>This website houses details of my school and personal projects, work history, and skills. Feel free to look around and use anything you might like.</p>
   </div>
   <div class="row">
-		<div class="col-md-4" ng-repeat="project in projectService.projects">
-			<h2>{{project.title}}</h2>
-			<p>{{project.contents}}</p>
-			<button class = "btn btn-default" ng-click = "openProj(project.id)">Check it out</button>
+		<div class="col-md-4 panel panel-default" ng-repeat="project in projectService.projects">
+			<div class = "panel-body">
+				<h2>{{project.title}}</h2>
+				<p>{{project.contents}}</p>
+				<button class = "btn btn-default" ng-click = "openProj(project.id)">Check it out</button>
+			</div>			
 		</div>
   </div><!--/span-->
 </div><!--/row-->
