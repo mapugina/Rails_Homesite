@@ -4,17 +4,10 @@
     <p>This website houses details of my school and personal projects, work history, and skills. Feel free to look around and use anything you might like.</p>
   </div>
   <div class="row">
-		<div class="col-md-4" ng-repeat="project in projects">
+		<div class="col-md-4" ng-repeat="project in projectService.projects">
 			<h2>{{project.title}}</h2>
 			<p>{{project.contents}}</p>
-			<button ng-click = "openProj(project.id)">Check it out</button>
+			<button class = "btn btn-default" ng-click = "openProj(project.id)">Check it out</button>
 		</div>
-		<!-- 
-    <div class="col-6 col-sm-6 col-lg-4">
-      <h2>Voting App</h2>
-      <p> A simple voting app made in angularJS to make games like <a href="http://www.indieboardsandcards.com/resistance.php"> Don Eskridge's The Resistance</a> a little easier to play. Meant for use on mobile devices (easier to pass around).</p>
-      <p><a class="btn btn-default" href="#/playerentry" role="button">Check it out &raquo;</a></p>
-			-->
-    </div><!--/span-->
-  </div><!--/row-->
-</div><!--/span-->	
+  </div><!--/span-->
+</div><!--/row-->
