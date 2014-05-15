@@ -1,0 +1,26 @@
+#=depend_on_asset "main.html"
+#=depend_on_asset "project.html"
+#=depend_on_asset "contact.html"
+#=depend_on_asset "about.html"
+
+@Homesite = angular.module('Homesite', ['ngRoute'])
+
+
+@Homesite.config( ['$routeProvider', ($routeProvider) ->
+  $routeProvider.when('/', {
+        templateUrl: '<%= path_to_asset("main.html")%>',
+        controller: 'homepageCtrl'
+      })
+			.when('/project/:projectId', { 
+				templateUrl: '<%= path_to_asset("project.html")%>', 
+				controller: 'homepageCtrl'
+			})
+      .when('/about', {
+        templateUrl: '<%= path_to_asset("about.html")%>',
+        controller: 'homepageCtrl'
+      })
+      .when('/contact', {
+        templateUrl: '<%= path_to_asset("contact.html")%>',
+        controller: 'homepageCtrl'
+      })
+])

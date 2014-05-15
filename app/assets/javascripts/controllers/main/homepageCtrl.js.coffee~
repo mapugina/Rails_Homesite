@@ -1,8 +1,0 @@
-
-###
-@Homesite.controller 'homepageCtrl', ['$scope', ($scope) ->
-	$scope.data
-]
-###
-
-@homepageCtrl = ($scope) ->
