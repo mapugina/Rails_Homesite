@@ -1,7 +1,7 @@
 @Homesite = angular.module('Homesite', ['ngRoute'])
 
 
-@Homesite.config( ['$routeProvider', ($routeProvider) ->
+@Homesite.config( ($routeProvider) ->
   $routeProvider.when('/', {
         templateUrl: 'assets/main.html',
         controller: 'homepageCtrl'
@@ -14,4 +14,4 @@
         templateUrl: 'assets/contact.html',
         controller: 'homepageCtrl'
       })
-])
+)

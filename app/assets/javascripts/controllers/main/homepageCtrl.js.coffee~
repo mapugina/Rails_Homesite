@@ -6,4 +6,3 @@
 ###
 
 @homepageCtrl = ($scope) ->
-  $scope.title = "My blog"

@@ -4,7 +4,3 @@
 
 @import "bootstrap";
 @import "bootstrap/theme";
-
-body {
-	padding-top: 50px
-}
