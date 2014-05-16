@@ -3,8 +3,8 @@
     <h1>Welcome!</h1>
     <p>This website houses details of my school and personal projects, work history, and skills. Feel free to look around and use anything you might like.</p>
   </div>
-  <div class="row">
-		<div class="col-md-4 panel panel-default" ng-repeat="project in projectService.projects">
+  <div class="row" ng-repeat="row in rows">
+		<div class="col-md-4 panel panel-default" ng-repeat="project in row">
 			<div class = "panel-body">
 				<h2>{{project.title}}</h2>
 				<p>{{project.contents}}</p>

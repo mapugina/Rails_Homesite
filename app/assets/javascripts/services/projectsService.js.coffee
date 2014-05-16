@@ -15,5 +15,6 @@ angular.module('Homesite').factory('projectService', ['$http', ($http) ->
 						console.error('Failed to load posts.')
 					)
 		return instance.projects
+		
 	return instance
 ])
