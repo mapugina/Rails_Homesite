@@ -11,6 +11,10 @@
         templateUrl: '<%= path_to_asset("main.html")%>',
         controller: 'homepageCtrl'
       })
+			.when('/project/new', {
+				templateUrl: '<%= path_to_asset("new_project.html")%>',
+				controller: 'newProjectCtrl'
+			})
 			.when('/project/:projectId', { 
 				templateUrl: '<%= path_to_asset("project.html")%>', 
 				controller: 'homepageCtrl'
@@ -23,4 +27,9 @@
         templateUrl: '<%= path_to_asset("contact.html")%>',
         controller: 'homepageCtrl'
       })
+			
+])
+
+@Homesite.config(["$httpProvider", (provider) ->
+  provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
 ])

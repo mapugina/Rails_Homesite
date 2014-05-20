@@ -16,5 +16,26 @@ angular.module('Homesite').factory('projectService', ['$http', ($http) ->
 					)
 		return instance.projects
 		
+	instance.createProject = (newProject) ->
+		console.log(newProject.title)
+		console.log(newProject.contents)
+		if newProject.title == '' or newProject.contents == ''
+			alert('Neither the Title nor the body are allowed to be left blank.')
+			return false
+			
+		data = 
+			title: newProject.title
+			contents: newProject.contents
+				
+		$http.post('./projects.json', data).success( (data) ->
+			
+			instance.projects.push(data)
+			console.log('Successfully created post.')		
+		).error( ->
+				console.error('Failed to create post.')
+		)
+		
+		return true
+		
 	return instance
 ])

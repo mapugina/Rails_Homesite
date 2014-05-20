@@ -13,4 +13,24 @@ class ProjectsController < ApplicationController
     
   end
   
+
+  def create
+    
+    new_project = Project.new
+    new_project.title = params[:title][0...250]
+    new_project.contents = params[:contents]
+    
+    if new_project.valid?
+      new_project.save!
+    else
+      render "public/422", :status => 422
+      return
+    end
+    
+    respond_with(new_project) do |format|
+      format.json { render :json => new_project.as_json }
+    end
+    
+   end
+      
 end

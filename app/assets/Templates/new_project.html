@@ -1,0 +1,10 @@
+<form class="well">
+  <fieldset>
+    <label><strong>Title</strong></label>
+    <input class="form-control" ng-model="formData.title" placeholder="New Project" type="text" maxlength="250">
+    <label><strong>Body</strong></label>
+    <textarea class="form-control" style="height: 250px" ng-model="formData.contents" placeholder="Type info here..."></textarea>
+    <button class="btn btn-primary" ng-click="createPost()">Create</button>
+    <button class="btn btn-danger pull-right" ng-click="clearPost()">Clear post</button>
+  </fieldset>
+</form>
