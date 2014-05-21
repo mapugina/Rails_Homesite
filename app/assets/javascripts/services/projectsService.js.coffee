@@ -4,16 +4,23 @@ angular.module('Homesite').factory('projectService', ['$http', ($http) ->
 		projects: []
 	console.log('creating homesite')
 	
-	instance.loadProjects = ->
+	instance.loadProjects = (deferred)->
 		if !instance.isLoaded
 			$http.get('./projects.json').success( (data) ->
 						instance.projects = data
-						console.log('Projects aquired')
-						console.log(instance.projects)
 						instance.isLoaded = true;
+						console.log('Projects aquired')
+						if deferred?
+							deferred.resolve()
+						
 					).error( ->
 						console.error('Failed to load posts.')
+						if deferred?
+							deferred.reject('Failed to load posts')
 					)
+		else
+			if deferred?
+					deferred.resolve()
 		return instance.projects
 		
 	instance.createProject = (newProject) ->
@@ -36,6 +43,10 @@ angular.module('Homesite').factory('projectService', ['$http', ($http) ->
 		)
 		
 		return true
+		
+	instance.findById = (id) ->
+		return project for project in instance.loadProjects() when project.id == id
+	
 		
 	return instance
 ])
