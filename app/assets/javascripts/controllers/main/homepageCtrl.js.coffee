@@ -9,12 +9,13 @@
 		$scope.projectService =  projectService
 		$scope.openProj = (projectId) ->
 			$location.url('/project/' + projectId)
+		$scope.rows = []
 			
 		projectService.loadProjects()
 		
-		$scope.$watch "projectService.projects", ->      
-		       $scope.rows = chunk projectService.projects, 3
-		
+		$scope.$watchCollection "projectService.projects", ->
+			$scope.rows = chunk projectService.loadProjects(), 3
+
 		chunk = (a,s)->
 		    if a.length == 0
 		        []
