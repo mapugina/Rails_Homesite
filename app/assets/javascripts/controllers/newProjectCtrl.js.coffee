@@ -1,6 +1,11 @@
-@newProjectCtrl = ['$scope', 'projectService', ($scope, projectService) ->
+@newProjectCtrl = ['$scope', '$location', 'projectService', ($scope, $location, projectService) ->
+		$scope.formData = {}
+		$scope.formData.title = ''
+		$scope.formData.contents = ''
+		
 		$scope.createPost = ->
-			projectService.createProject($scope.formData)
+			if (projectService.createProject($scope.formData))
+				$location.path('')
 			
 		$scope.clearPost = ->
 			$scope.formData.title = ''
