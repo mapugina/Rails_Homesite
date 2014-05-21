@@ -20,7 +20,7 @@ angular.module('Homesite').factory('projectService', ['$http', ($http) ->
 		console.log(newProject.title)
 		console.log(newProject.contents)
 		if newProject.title == '' or newProject.contents == ''
-			alert('Neither the Title nor the body are allowed to be left blank.')
+			alert('Neither the title nor the body are allowed to be left blank.')
 			return false
 			
 		data = 
